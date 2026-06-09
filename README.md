@@ -1,77 +1,193 @@
-# OrbitEye AI
+#  OrbitEye AI
 
-O **OrbitEye AI** é um módulo de inteligência climática desenvolvido para a Global Solution FIAP. A proposta é apoiar cidades, Defesa Civil e população no monitoramento de áreas vulneráveis a enchentes, deslizamentos e outros eventos climáticos extremos.
+## Global Solution 2026/1 – FIAP
 
-O sistema usa dados ambientais, sensores simulados e indicadores associados a sensoriamento remoto para classificar o risco de uma região como **baixo, médio, alto ou crítico**.
+### Integrantes
 
-## Problema
+* Guilherme Costeira Braganholo
+* Julio Cesar Dias Vilella
+* Gabriel Nakamura Ogata
 
-Eventos climáticos extremos estão cada vez mais frequentes e afetam diretamente a população urbana. Em muitos casos, o problema não é a falta de dados, mas a dificuldade de transformar dados técnicos em informação clara, rápida e útil.
 
-O OrbitEye foi pensado para reduzir esse intervalo entre a coleta de dados e a tomada de decisão.
 
-## Solução
+---
 
-A solução analisa dados como chuva acumulada, umidade, temperatura, velocidade do vento, nível do rio, índice de vegetação/satélite e histórico de ocorrências da região.
+# VIDEO
+https://youtu.be/fGpEC8Og0mU
 
-A partir desses indicadores, o modelo de Machine Learning classifica o risco climático e o dashboard apresenta o resultado de forma visual. Além disso, o sistema gera um alerta em linguagem simples para facilitar a comunicação com moradores e equipes de resposta.
+#  Visão Geral
 
-## Relação com a Global Solution
+O OrbitEye AI é uma plataforma inteligente desenvolvida para apoiar o monitoramento climático e a prevenção de desastres naturais.
 
-O projeto se conecta ao tema da economia espacial ao utilizar o conceito de dados orbitais e sensoriamento remoto como apoio à análise climática. O índice de vegetação utilizado no modelo representa uma variável derivada de observação da Terra, comum em aplicações que usam imagens de satélite.
+A solução utiliza conceitos de Inteligência Artificial, Machine Learning, análise de dados ambientais e indicadores derivados de sensoriamento remoto para identificar regiões com potencial risco de enchentes, alagamentos e eventos climáticos extremos.
 
-## Tecnologias utilizadas
+O objetivo é transformar dados em informações úteis para auxiliar a população, órgãos públicos e equipes de resposta na tomada de decisão preventiva.
 
-- Python
-- Pandas
-- Scikit-Learn
-- Random Forest
-- Streamlit
-- Plotly
-- OpenAI API opcional
-- Dataset CSV
+---
 
-## Arquitetura
+#  Problema
 
-```mermaid
-flowchart TD
-    A[Dados climáticos e sensores simulados] --> B[Tratamento dos dados]
-    S[Indicadores orbitais / sensoriamento remoto] --> B
-    B --> C[Modelo de Machine Learning]
-    C --> D[Classificação do risco]
-    D --> E[Dashboard OrbitEye]
-    D --> F[Gerador de alerta]
-    F --> G[População / Defesa Civil]
-```
+Eventos climáticos extremos têm se tornado cada vez mais frequentes em diversas regiões do Brasil.
 
-## Como executar
+Enchentes, deslizamentos, tempestades e alagamentos causam prejuízos econômicos, impactos ambientais e colocam vidas em risco.
+
+Embora existam diversos dados disponíveis, muitas vezes essas informações não são processadas de forma rápida e acessível para apoiar ações preventivas.
+
+---
+
+#  Solução Proposta
+
+O OrbitEye AI foi desenvolvido para realizar a análise de indicadores ambientais e classificar automaticamente o nível de risco climático de uma determinada região.
+
+A plataforma recebe informações relacionadas a:
+
+* Chuva acumulada
+* Umidade do ar
+* Temperatura
+* Velocidade do vento
+* Nível do rio
+* Índice de vegetação
+* Histórico de ocorrências
+
+Com base nesses dados, um modelo de Machine Learning realiza a classificação do risco em quatro categorias:
+
+* Baixo
+* Médio
+* Alto
+* Crítico
+
+Após a classificação, o sistema gera automaticamente um alerta em linguagem simples para facilitar a comunicação com a população.
+
+---
+
+#  Relação com a Economia Espacial
+
+O OrbitEye está alinhado ao tema da Global Solution ao utilizar conceitos relacionados à observação da Terra por satélites.
+
+Indicadores derivados de sensoriamento remoto podem ser utilizados para complementar análises ambientais e climáticas, permitindo uma visão mais ampla das condições de determinada região.
+
+A proposta demonstra como tecnologias associadas ao setor espacial podem gerar benefícios diretos para a sociedade, contribuindo para a prevenção de desastres naturais.
+
+---
+
+#  Machine Learning
+
+O sistema utiliza o algoritmo Random Forest para classificação de risco climático.
+
+As etapas realizadas foram:
+
+1. Coleta dos dados
+2. Tratamento dos dados
+3. Treinamento do modelo
+4. Geração das previsões
+5. Apresentação dos resultados
+
+O modelo foi treinado utilizando um conjunto de dados contendo informações climáticas simuladas baseadas em cenários reais.
+
+---
+
+#  Dashboard
+
+O dashboard foi desenvolvido utilizando Streamlit.
+
+Funcionalidades disponíveis:
+
+* Visualização de métricas
+* Distribuição dos níveis de risco
+* Simulação de cenários climáticos
+* Classificação automática do risco
+* Exibição da confiança da previsão
+* Geração de alertas
+
+---
+
+#  Tecnologias Utilizadas
+
+* Python
+* Pandas
+* Scikit-Learn
+* Streamlit
+* Plotly
+* Joblib
+* OpenAI API (Opcional)
+
+---
+
+#  Arquitetura da Solução
+
+Dados Climáticos e Ambientais
+
+↓
+
+Tratamento dos Dados
+
+↓
+
+Modelo de Machine Learning
+
+↓
+
+Classificação do Risco
+
+↓
+
+Dashboard OrbitEye
+
+↓
+
+Geração de Alertas
+
+↓
+
+População e Defesa Civil
+
+---
+
+#  Benefícios
+
+* Apoio à prevenção de desastres naturais
+* Melhor interpretação de dados climáticos
+* Comunicação simplificada para a população
+* Apoio à tomada de decisão
+* Aplicação prática de Inteligência Artificial
+
+---
+
+# ▶ Como Executar
+
+Instalação das dependências:
 
 ```bash
 py -3.12 -m pip install -r requirements.txt
+```
+
+Treinamento do modelo:
+
+```bash
 py -3.12 src\train_model.py
+```
+
+Execução do dashboard:
+
+```bash
 py -3.12 -m streamlit run src\app.py
 ```
 
-## Exemplo de previsão
+---
 
-```json
-{
-  "chuva_mm": 150,
-  "umidade": 95,
-  "temperatura": 26,
-  "vento_kmh": 70,
-  "nivel_rio_m": 6.5,
-  "indice_vegetacao": 0.10,
-  "historico_ocorrencias": 12
-}
-```
+# 📽️ Demonstração
 
-Resultado esperado:
+Durante a demonstração da solução são apresentados:
 
-```text
-Risco previsto: CRITICO
-```
+* Treinamento do modelo
+* Dashboard interativo
+* Simulação de cenários climáticos
+* Classificação automática do risco
+* Geração de alertas
 
-## Vídeo de demonstração
+---
 
-O vídeo deve mostrar o problema, a proposta do OrbitEye, o treinamento do modelo, o dashboard, a simulação de risco crítico e o alerta gerado automaticamente.
+# 📚
+O OrbitEye AI demonstra como Inteligência Artificial, análise de dados e conceitos relacionados à observação da Terra podem ser utilizados para apoiar ações preventivas e reduzir impactos causados por eventos climáticos extremos.
+
+A solução evidencia a aplicação prática de tecnologias modernas para resolver problemas reais da sociedade.
